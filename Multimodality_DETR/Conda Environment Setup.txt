@@ -1,0 +1,91 @@
+Conda Environment Setup:
+
+    Install anaconda
+
+    To create new environment named "transformer_env":
+
+    > conda create --name transformer_env
+
+    To activate the environment:
+
+    > conda activate transformer_env
+
+    Install pip:
+
+    > conda install -c conda-forge pip
+
+    Install python=3.10:
+
+    > conda install python=3.10
+
+    Install ipykernel:
+
+    > conda install ipykernel
+
+    Install jupyter extensions and widgets:
+
+    > jupyter nbextension enable --py widgetsnbextension
+
+    Install tensorboard:
+
+    > conda install -c anaconda tensorboard
+
+    Install pytorch, torchvision, torchaudio depending on the version of cuda you have
+    (For e.g., for cuda: 2.1.0):
+
+    > conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+    Install Supervision:
+
+    > conda install supervision 
+
+    Install other libraries:
+
+    > pip install -q transformers
+    > pip install -q pytorch-lightning
+    > pip install -q timm
+
+    > pip install cython
+    > pip install pycocotools
+    > pip install scipy
+
+
+
+In Visual Studio Code IDE:
+
+To select python interpreter from transformer_env:
+
+        1. Open the Command Palette in VSCode:
+        ctrl + shift + p 
+
+        2. type:
+        Python: Select Interpreter 
+
+        3. Select the desired environment
+        Python 3.10.13 ('transformer_env1') ~\.cibda\envs\transformer_env\python.exe
+
+
+    Check the Python interpreter in the terminal: 
+    You can check the Python interpreter in the terminal by running 
+        > which python or python --version. 
+    This should point to the Python interpreter in your conda environment and show the correct version (Python 3.10.8).
+
+
+Add path of the environment in VS Code:
+
+    Open the Command Palette in VSCode with
+        Ctrl+Shift+P.
+    Type 
+        Preferences: Open User Settings (JSON) 
+    and select it. 
+
+    This will open settings.json file.
+    In the settings.json file, add the following line:
+
+    "python.condaPath": "/path/to/conda"
+
+Note: you can see path of your conda environment by running the following prompt in Anaconda Prompt or terminal:
+	
+     > which conda
+
+After setting the Python: Conda Path, try running some Python script again in VSCode
